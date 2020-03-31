@@ -25,6 +25,16 @@ namespace ThemeParkRater.Data
         public int ParkId { get; set; }
         public virtual ThemePark Park { get; set; }
         public virtual ICollection<RideRating> Ratings { get; set; }
+        public double AverageRating
+        {
+            get
+            {
+                if (Ratings != null && Ratings.Count != 0)
+                    return (double)Ratings.Sum(rating => rating.Score) / Ratings.Count;
+
+                return 0;
+            }
+        }
 
 
     }

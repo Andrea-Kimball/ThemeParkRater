@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ThemeParkRater.Models.ThemeParkModels.ParkListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<audio controls="controls">
+    <source src="~/Assets/Michael%20Jackson%20-%20P.Y.T.%20(Pretty%20Young%20Thing)%20(Audio).mp3" type="audio/mpeg" />
+</audio>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ParkId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AverageRating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RideCount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ParkId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AverageRating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RideCount)
+        </td>
+        <td>
+            @Html.ActionLink("Rate", "Rate", new { id = item.ParkId })
+                @Html.ActionLink("Edit", "Edit", new { id = item.ParkId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ParkId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ParkId })
+            </td>
+    </tr>
+}
+
+</table>

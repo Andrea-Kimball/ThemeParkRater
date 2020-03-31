@@ -56,10 +56,20 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RatingModels\Park\ParkRatingCreate.cs" />
+    <Compile Include="RatingModels\Park\ParkRatingListItem.cs" />
+    <Compile Include="RatingModels\RatingListItem.cs" />
+    <Compile Include="RideModels\RideListItem.cs" />
+    <Compile Include="ThemeParkModels\ParkCreate.cs" />
+    <Compile Include="ThemeParkModels\ParkDetails.cs" />
+    <Compile Include="ThemeParkModels\ParkListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="RatingModels\RIde\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
